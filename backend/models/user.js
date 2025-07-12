@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
+const { DataTypes } = require("sequelize");
+const sequelize = require("../config/db");
 
-const User = sequelize.define('User', {
+const User = sequelize.define("User", {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -15,6 +15,9 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+}, {
+  tableName: "users",
+  timestamps: false, // disable createdAt/updatedAt
 });
 
 module.exports = User;
